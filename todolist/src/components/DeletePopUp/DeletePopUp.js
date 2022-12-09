@@ -16,12 +16,10 @@ const DeletePopUp =({active , setActive , deleteId}) => {
     return (
         <div className = {active ? "modal active" : "modal"} onClick = {() => setActive(false)}>
             <div  className='modal-content' >
-                <div className="delete-pop-up-container">
                     <p className="delete-pop-up-text text-font-style">Are you sure you want to delete?</p>
                     <div className="delete-pop-up-yes-no-box">
                         <p className="delete-pop-up-buttons text-font-style" onClick={() => deleteTask(deleteId)}>Yes</p>
                         <p className="delete-pop-up-buttons text-font-style" onClick = {() => setActive(false)}> No</p>
-                    </div>
                 </div>
             </div>
         </div>

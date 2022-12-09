@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil"
-import uuid from 'react-uuid';
 import DeletePopUp from "../DeletePopUp/DeletePopUp";
 import { tasksArray ,hideComplete } from "../../State/Storage"
 import del from "../../assets/image/delete.png"
