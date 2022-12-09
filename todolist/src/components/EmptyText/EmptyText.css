@@ -1,0 +1,31 @@
+.empty-text-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.empty-page-first-text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #ACACAC;
+}
+.empty-page-second-text {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.002em;
+    color: #666666;
+}
+
+@media only screen and (max-width: 768px) {
+    .empty-page-first-text { 
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.2px;
+    }
+    .empty-page-second-text { 
+        font-size: 18px;
+        line-height: 27px;
+    }
+ }

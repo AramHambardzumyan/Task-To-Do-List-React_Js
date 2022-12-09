@@ -1,0 +1,35 @@
+.hide-completed-container {
+    align-self: flex-end;
+    margin-right: 190px;
+    display: flex;  
+    position: absolute;
+}
+.hide-completed-checkbox {
+    margin-right: 15px;
+}
+.hide-completed-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+.checbox-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 1024px) {
+    .hide-completed-container { 
+        margin-right: 100px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hide-completed-container { 
+        margin-right: 0px;
+    }
+    .hide-completed-text { 
+        font-size: 16px;
+    }
+}

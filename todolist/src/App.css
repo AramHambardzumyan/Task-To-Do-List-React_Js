@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin-top: 120px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+}
+.text-font-style {
+  font-family: 'Poppins'; 
+  font-style: normal;
+  text-transform: capitalize;
+}
+.add-task-component-delete-button {
+  width: 25px;
+  height: 25px;
+}
+.add-task-component-delete-button:hover {
+  cursor: pointer;
+}
+input[type=checkbox] {
+  visibility: hidden;
+}
+.geekmark {
+  position: absolute;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 2px solid #008594;
+  border-radius: 2px;
+}
+.geekmark:hover {
+  cursor: pointer;
+}
+.hide-completed-text input:checked ~ .geekmark {
+  background-color: #008594;
+}
+.geekmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.hide-completed-text input:checked ~ .geekmark:after {
+  display: block;
+}
+.hide-completed-text .geekmark:after {
+  left: 4.2px;
+  bottom: 2.5px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2.3px 2.3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 80px 20px 0 20px;
+  } 
+  .add-task-component-delete-button {
+    width: 20px;
+    height: 20px;
+  }
+}

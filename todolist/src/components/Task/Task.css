@@ -1,0 +1,55 @@
+.task-container {
+    margin-top: 70px;
+}
+.task-boxes {
+    display: flex;
+    width: 87%;
+    padding: 15px 0px;
+    border-bottom: 1px solid #E5E5E5;
+    align-items: center;
+}
+.task-completed-checkbox {
+    width: 20px;
+}
+.task-text {
+    width: 100%;
+    margin-right: 20px;
+    margin-left : 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #666666;
+    line-break: auto;
+    height: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.task-text-completed {
+    width: 100%;
+    margin-right: 20px;
+    margin-left : 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #ACACAC;
+    line-break: auto;
+    height: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.hide-completed {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .task-boxes {
+        width: 100%;
+    }
+    .task-text  { 
+        font-size: 16px;
+    }
+    .task-text-completed { 
+        font-size: 16px;
+    }
+}
