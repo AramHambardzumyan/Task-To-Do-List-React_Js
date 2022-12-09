@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRecoilState, } from "recoil"
+import {useRecoilState } from "recoil"
 import AddTask from './components/AddTask/AddTask';
 import EmptyText from './components/EmptyText/EmptyText';
 import HideCompleted from './components/HideCompleted/HideCompleted';
@@ -8,16 +8,14 @@ import { tasksArray } from './State/Storage';
 import './App.css';
 
 const App = () => {
-   const [showDesktop , setShowDesktop] = useRecoilState(tasksArray)
+   const [tasks , setTasks] = useRecoilState(tasksArray)
 
   return (
-    <>
     <div className='container'>
-      {showDesktop.length === 0 ? '' : <HideCompleted /> }
+      {tasks.length !== 0 && <HideCompleted /> }
       <AddTask />
-      {showDesktop.length === 0 ? <EmptyText /> : <Task /> }
+      {tasks.length === 0 ? <EmptyText /> : <Task /> }
     </div>
-    </>
   )
 }
 export default App

@@ -9,7 +9,7 @@ import "../../App.css"
 
 const Task =() => {
 
-    const [tasks ,setTasks] = useRecoilState(tasksArray )
+    const [tasks ,setTasks] = useRecoilState(tasksArray)
     const [hideCheck , setHideCheck] = useRecoilState(hideComplete)
     const [modalActive , setModalActive]  = useState(false)
     const [transferable , setTransferable] = useState('')
@@ -21,7 +21,7 @@ const Task =() => {
 
     const handleChange = (id) => {
 
-        const taskSecond =   tasks.map(el => {
+        const taskSecond = tasks.map(el => {
             if(el.id === id) {
                 return{
                      ...el, completed: !el.completed
@@ -34,24 +34,22 @@ const Task =() => {
     };
 
     return (
-        <section  className='task-container'>  
-        <>
-        {tasks.slice(0).reverse().map(el => {
-            return(
-                <div className={hideCheck && el.completed ?"hide-completed":'task-boxes'} key={uuid()}>
-                    <label className="hide-completed-text text-font-style">
-                        <input type="checkbox"   checked={el.completed} onChange={() =>handleChange(el.id )}  className="hide-completed-checkbox"/>
-                        <span className="geekmark"></span>
-                    </label>
-                                
-                    <p className={el.completed ?"task-text-completed text-font-style" :"task-text text-font-style"}>{el.task}</p>   
-                    <img src={del} alt='delete'  className="add-task-component-delete-button" onClick={() => deleteButton(el.id)  } />               
-                </div>
-            ) 
-        })}    
-        </>
-        <DeletePopUp  active ={modalActive} setActive = {setModalActive} deleteId={transferable} />
-        </section>
+        <div className='task-container'> 
+            {tasks.slice(0).reverse().map(el => {
+                return(
+                    <div className={hideCheck && el.completed ?"hide-completed":'task-boxes'} key={el.id}>
+                        <label className="hide-completed-text text-font-style">
+                            <input type="checkbox"   checked={el.completed} onChange={() =>handleChange(el.id)}  className="hide-completed-checkbox"/>
+                            <span className="geekmark"></span>
+                        </label>
+                                    
+                        <p className={el.completed ?"task-text-completed text-font-style" :"task-text text-font-style"}>{el.task}</p>   
+                        <img src={del} alt='delete'  className="add-task-component-delete-button" onClick={() => deleteButton(el.id)  } />               
+                    </div>
+                ) 
+            })}    
+            <DeletePopUp  active ={modalActive} setActive = {setModalActive} deleteId={transferable} />
+        </div>
     )
 }
 export default Task

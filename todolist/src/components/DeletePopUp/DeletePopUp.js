@@ -9,15 +9,13 @@ const DeletePopUp =({active , setActive , deleteId}) => {
     const [tasks , setTasks] = useRecoilState(tasksArray)
 
     const deleteTask = (id) => {
-        let toDoWithoutDeleted = tasks.filter(el => el.id !== id)
-        setTasks(toDoWithoutDeleted)
+        setTasks(() => tasks.filter(el => el.id !== id))
         setActive(false)
     }
 
     return (
-        <>
         <div className = {active ? "modal active" : "modal"} onClick = {() => setActive(false)}>
-            <div  className='modal-content' onClick = {e => e.stopPropagation()}>
+            <div  className='modal-content' >
                 <div className="delete-pop-up-container">
                     <p className="delete-pop-up-text text-font-style">Are you sure you want to delete?</p>
                     <div className="delete-pop-up-yes-no-box">
@@ -27,7 +25,6 @@ const DeletePopUp =({active , setActive , deleteId}) => {
                 </div>
             </div>
         </div>
-        </>
     )
 }
 export default DeletePopUp
